@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build: . # Path to your FastAPI Dockerfile
+    container_name: rag_api
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}      # Critical: Pass keys here
+      - PINECONE_API_KEY=${PINECONE_API_KEY}  # Critical: Pass keys here
+      - PINECONE_ENV=us-east-1                # Example config
+      - PINECONE_INDEX_NAME=legal-intelligence
+    volumes:
+      - ./:/app  # Optional: for hot-reloading during development
+    command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload

@@ -1,0 +1,9 @@
+.git
+.gitignore
+venv/
+.venv/
+.env
+data/
+preprocess.py
+pinecone_upsert.py
+README.md
