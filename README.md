@@ -60,4 +60,3 @@ curl -X POST http://localhost:8000/query \
 Built to demonstrate ability to translate traditional ML engineering 
 experience (fraud detection, MLOps) to modern LLM architectures while 
 maintaining production-quality standards.
-```
